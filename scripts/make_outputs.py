@@ -1,7 +1,7 @@
-"""Build the summary tables, the GeoJSON, the cover and the charts from data/montessori_schools_official_registries.csv.
+"""Build the summary tables, the GeoJSON, the cover and the charts (Natural Earth outlines, public domain, are downloaded once into ../../_raw) from data/montessori_schools_official_registries.csv.
 
 Usage: python scripts/make_outputs.py
-Needs pandas and matplotlib.
+Needs pandas, numpy, matplotlib and Pillow.
 """
 import json
 from pathlib import Path
@@ -9,15 +9,14 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch
+import numpy as np
 import pandas as pd
+import msf_style as S
 
-ROOT = Path(__file__).resolve().parent.parent
-DATA, IMG = ROOT / "data", ROOT / "images"
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+DATA, IMG, RAW = ROOT / "data", ROOT / "images", ROOT.parent / "_raw"
 IMG.mkdir(exist_ok=True)
-
-INK, BLUE, GREEN, SOFT, MINT, MUTED = "#0f172a", "#2563eb", "#059669", "#f8fafc", "#ecfdf5", "#64748b"
-plt.rcParams["font.family"] = ["Segoe UI", "Arial", "DejaVu Sans"]
 
 df = pd.read_csv(DATA / "montessori_schools_official_registries.csv", dtype=str).fillna("")
 N = len(df)
@@ -66,93 +65,101 @@ feats = [{"type": "Feature",
     json.dumps({"type": "FeatureCollection", "features": feats}, ensure_ascii=False), encoding="utf-8")
 
 # ---------- images ----------
-COUNTRY_COLOR = {"France": BLUE, "Netherlands": GREEN, "England": INK, "Wales": MUTED}
 fr_n = int((df.country == "France").sum())
 nl_n = int((df.country == "Netherlands").sum())
 uk_n = int(df.country.isin(["England", "Wales"]).sum())
+SRC = "Sources: Annuaire de l'éducation, GIAS, DUO Open Onderwijsdata. Downloaded 2026-11-17."
+CCOL = {"France": S.BLUE, "Netherlands": S.AMBER, "England": S.CORAL, "Wales": S.VIOLET}
 
+S.cover(IMG / "cover.png", HERE / "cover_photo.jpg", "Montessori Schools in\nOfficial School Registries",
+        "Open dataset  ·  CC BY 4.0", f"{N}", "open schools with Montessori\nin their official name",
+        [f"{fr_n} France", f"{nl_n} Netherlands", f"{uk_n} England and Wales"],
+        "Photo: Anil Sharma, Pexels", accent=S.AMBER, focus=(0.5, 0.45))
 
-def card(ax, x, y, w, h, fc, ec="#e2e8f0", r=0.03):
-    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle=f"round,pad=0,rounding_size={r}", fc=fc, ec=ec, lw=1.5,
-                                transform=ax.transAxes, mutation_aspect=0.5))
+# key numbers
+idf = int(by_region[(by_region.country == "France") & (by_region.region == "Ile-de-France")].schools.iloc[0])
+ams = int(by_city[by_city.city == "Amsterdam"].schools.iloc[0])
+S.key_numbers(IMG / "key_numbers.png", "Official Registries in Six Numbers",
+              "Open schools with Montessori in the official name, in the school lists of three governments.", SRC, [
+                  (f"{N}", "open schools in the file", S.AMBER),
+                  (f"{fr_n}", "in France, from 68,555 establishments", S.BLUE),
+                  (f"{nl_n}", "in the Netherlands, from 7,720 locations", S.TEAL),
+                  (f"{uk_n}", "in England and Wales, from about 27,200", S.CORAL),
+                  (f"{idf}", "in Ile-de-France, the biggest French region", S.VIOLET),
+                  (f"{ams}", "in Amsterdam, the biggest city overall", S.GREEN),
+              ], accent=S.AMBER)
 
+# France dot map
+world = S.natural_earth(RAW, "ne_50m_admin_0_countries.geojson")
+fr = df[(df.country == "France") & (df.latitude != "")].copy()
+fr["la"], fr["lo"] = fr.latitude.astype(float), fr.longitude.astype(float)
+LON, LAT = (-5.6, 10.2), (41.0, 51.6)
+main = fr[(fr.la > LAT[0]) & (fr.la < LAT[1]) & (fr.lo > LON[0]) & (fr.lo < LON[1])]
+k = np.cos(np.radians(46.3))
+p = S.Page("Where the French Registry Places Them",
+           f"{len(main)} of the {len(fr)} French records with coordinates fall in mainland France. One dot per school.",
+           SRC, accent=S.AMBER, size=(1400, 1000))
+ax = p.axes(66, p.top - 6, 720, p.bottom - p.top)
+for f in world["features"]:
+    for poly in S.polygons(f):
+        c = f["properties"]["NAME"] == "France"
+        ax.fill(poly[:, 0] * k, poly[:, 1], fc=S.mix(S.AMBER, "#ffffff", 0.82) if c else "#dde5ef", ec="white", lw=1.2, zorder=1)
+ax.scatter(main.lo * k, main.la, s=62, color=S.AMBER, edgecolor="white", linewidth=0.9, alpha=0.9, zorder=3)
+ax.set_xlim(LON[0] * k, LON[1] * k); ax.set_ylim(*LAT); ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
+ax.set_facecolor("#eaf2fb"); ax.patch.set_alpha(1)
+for sp in ax.spines.values(): sp.set_visible(False)
+cards = [(f"{len(fr)}", "French records carry registry coordinates", S.AMBER),
+         (f"{len(fr) - len(main)}", "overseas records, not drawn on this map", S.VIOLET),
+         (f"{idf}", f"schools in Ile-de-France, of {fr_n} in France", S.BLUE)]
+for i, (big, lab, col) in enumerate(cards):
+    y = p.top + 14 + i * 214
+    S.rrect(p.ax, 840, y, 494, 190, r=26, fc=S.mix(col, "#ffffff", 0.92), ec=S.mix(col, "#ffffff", 0.7), lw=1.5, z=2)
+    S.rrect(p.ax, 868, y + 28, 46, 8, r=4, fc=col, z=3)
+    p.ax.text(868, y + 96, big, fontsize=44, fontweight="bold", color=col, va="center", zorder=3)
+    p.ax.text(868, y + 152, lab, fontsize=14.5, va="center", zorder=3)
+p.save(IMG / "france_dot_map.png")
 
-# cover 1600x800
-fig = plt.figure(figsize=(16, 8), dpi=100, facecolor=SOFT)
-ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
-ax.text(0.06, 0.86, "Open Dataset", color=BLUE, fontsize=20, fontweight="bold", va="center")
-ax.text(0.06, 0.72, "Montessori Schools in\nOfficial School Registries", color=INK, fontsize=44,
-        fontweight="bold", va="center", linespacing=1.15)
-ax.text(0.06, 0.52, "France, England and the Netherlands, straight from government school lists",
-        color=MUTED, fontsize=19, va="center")
-ax.text(0.06, 0.38, f"{N}", color=BLUE, fontsize=64, fontweight="bold", va="center")
-ax.text(0.06 + 0.115, 0.375, "open schools with Montessori\nin their official name", color=INK, fontsize=21,
-        va="center", linespacing=1.3)
-cards = [("France", fr_n, BLUE, MINT), ("Netherlands", nl_n, GREEN, MINT), ("England and Wales", uk_n, INK, "#ffffff")]
-for i, (nm, n, col, bg) in enumerate(cards):
-    x = 0.06 + i * 0.30
-    card(ax, x, 0.13, 0.27, 0.15, bg)
-    ax.text(x + 0.02, 0.205, f"{n}", color=col, fontsize=40, fontweight="bold", va="center")
-    ax.text(x + 0.095, 0.205, nm, color=INK, fontsize=19, va="center")
-ax.text(0.06, 0.05, "Montessori School Finder  ×  Montessori Theory", color=MUTED, fontsize=14, va="center")
-ax.text(0.94, 0.05, "CC BY 4.0", color=MUTED, fontsize=14, va="center", ha="right")
-fig.savefig(IMG / "cover.png", dpi=100, facecolor=SOFT)
-plt.close(fig)
-
-
-def style(ax):
-    for s in ("top", "right", "left"):
-        ax.spines[s].set_visible(False)
-    ax.spines["bottom"].set_color("#cbd5e1")
-    ax.tick_params(colors=INK, length=0)
-    ax.set_facecolor("#ffffff")
-
-
-def footer(fig, text):
-    fig.text(0.02, 0.015, text, color=MUTED, fontsize=9)
-    fig.text(0.98, 0.015, "Montessori School Finder × Montessori Theory", color=MUTED, fontsize=9, ha="right")
-
-
-# chart 1 schools by country
-fig, ax = plt.subplots(figsize=(10, 5.2), dpi=150, facecolor=SOFT)
-d = by_country.sort_values("schools")
-ax.barh(d.country, d.schools, color=[COUNTRY_COLOR[c] for c in d.country], height=0.6)
-for y, v in enumerate(d.schools):
-    ax.text(v + N * 0.008, y, f"{v}", va="center", color=INK, fontsize=13, fontweight="bold")
-style(ax); ax.set_xticks([]); ax.set_xlim(0, d.schools.max() * 1.12)
-fig.suptitle("Open Schools With Montessori in the Official Name, by Country", x=0.02, ha="left", color=INK,
-             fontsize=15, fontweight="bold")
-footer(fig, "Sources: Annuaire de l'education, GIAS, DUO. Nov 2026.")
-fig.tight_layout(rect=(0, 0.04, 1, 0.95))
-fig.savefig(IMG / "schools_by_country.png", facecolor=SOFT); plt.close(fig)
-
-# chart 2 top regions
-fig, ax = plt.subplots(figsize=(10, 6.2), dpi=150, facecolor=SOFT)
-top = by_region.sort_values("schools", ascending=False).head(12).sort_values("schools")
-ax.barh([f"{r}  ({c})" for r, c in zip(top.region, top.country)], top.schools,
-        color=[COUNTRY_COLOR[c] for c in top.country], height=0.65)
-for y, v in enumerate(top.schools):
-    ax.text(v + 0.8, y, f"{v}", va="center", color=INK, fontsize=12, fontweight="bold")
-style(ax); ax.set_xticks([]); ax.set_xlim(0, top.schools.max() * 1.1)
-fig.suptitle("The 12 Regions With the Most Montessori-Named Schools", x=0.02, ha="left", color=INK,
-             fontsize=15, fontweight="bold")
-footer(fig, "Region as published by each registry.")
-fig.tight_layout(rect=(0, 0.04, 1, 0.95))
-fig.savefig(IMG / "top_regions.png", facecolor=SOFT); plt.close(fig)
-
-# chart 3 public vs private
-fig, ax = plt.subplots(figsize=(10, 4.6), dpi=150, facecolor=SOFT)
+# country shares and public or private status
 d = by_country.sort_values("schools", ascending=False)
-cols = [("public", BLUE, "Public"), ("private", GREEN, "Private"), ("other_or_not_stated", "#cbd5e1", "Other or not stated")]
-left = [0] * len(d)
-for k, c, lab in cols:
-    ax.barh(d.country, d[k], left=left, color=c, label=lab, height=0.6)
-    left = [a + b for a, b in zip(left, d[k])]
-ax.invert_yaxis(); style(ax); ax.set_xticks([])
-ax.legend(frameon=False, loc="lower right", fontsize=11)
-fig.suptitle("Public, Private and Other Status of Montessori-Named Schools", x=0.02, ha="left", color=INK,
-             fontsize=15, fontweight="bold")
-footer(fig, "Dutch schools of special denomination are publicly funded and counted under other.")
-fig.tight_layout(rect=(0, 0.04, 1, 0.94))
-fig.savefig(IMG / "public_private.png", facecolor=SOFT); plt.close(fig)
+p = S.Page("Who Lists Them, and How They Are Funded",
+           f"Left, the {N} schools by country. Right, the public or private status each registry gives.",
+           "Dutch schools of special denomination are publicly funded and counted under other. " + SRC, accent=S.CORAL, size=(1400, 860))
+a1 = p.axes(70, p.top + 10, 430, 430)
+S.donut(a1, list(d.schools), [CCOL[c] for c in d.country], f"{N}", "schools", width=0.36)
+for i, (_, r) in enumerate(d.iterrows()):
+    x, y = 70 + (i % 2) * 215, p.top + 480 + (i // 2) * 44
+    p.ax.scatter([x + 10], [y], s=120, color=CCOL[r.country], zorder=5)
+    p.ax.text(x + 28, y, f"{r.country}", fontsize=13, va="center", zorder=5)
+    p.ax.text(x + 28 + S.text_w(p.fig, p.ax, f"{r.country}  ", 13), y, f"{r.schools}", fontsize=13, va="center", fontweight="bold", zorder=5)
+seg = [("public", S.BLUE, "Public"), ("private", S.GREEN, "Private"), ("other_or_not_stated", "#94a3b8", "Other or not stated")]
+x0, bw = 640, 640
+lx = x0
+for key, col, lab in seg:
+    S.rrect(p.ax, lx, p.top + 10, 24, 20, r=5, fc=col, z=5)
+    p.ax.text(lx + 34, p.top + 20, lab, fontsize=12.5, va="center", zorder=5)
+    lx += 40 + S.text_w(p.fig, p.ax, lab, 12.5) + 24
+for i, (_, r) in enumerate(d.iterrows()):
+    y = p.top + 90 + i * 100
+    p.ax.text(x0, y - 12, r.country, fontsize=14, fontweight="bold", va="center", zorder=5)
+    p.ax.text(x0 + bw, y - 12, f"{r.schools} school" + ("" if r.schools == 1 else "s"), fontsize=12.5, color=S.MUTED, ha="right", va="center", zorder=5)
+    x = x0
+    for key, col, lab in seg:
+        w = bw * r[key] / r.schools
+        if w <= 0:
+            continue
+        S.rrect(p.ax, x, y + 6, max(w - 3, 2), 34, r=8, fc=col, z=4)
+        if w > 20:
+            p.ax.text(x + w / 2, y + 23, f"{int(r[key])}", fontsize=12.5 if w > 44 else 10.5, color="white", fontweight="bold", ha="center", va="center", zorder=5)
+        x += w
+p.save(IMG / "registry_shares.png")
+
+# top regions
+top = by_region.sort_values(["schools", "region"], ascending=[False, True]).head(12)
+p = S.Page("The 12 Regions With the Most Montessori-Named Schools",
+           "Regions, Government Office Regions and provinces, as each registry publishes them. Colour shows the country.",
+           SRC, accent=S.VIOLET, size=(1400, 880))
+ax = p.axes(380, p.top - 4, 850, p.bottom - p.top - 6)
+S.lollipop(ax, [f"{r}  ({c})" for r, c in zip(top.region, top.country)], list(top.schools), [CCOL[c] for c in top.country], xmax=105, size=260)
+ax.set_xticks([])
+p.save(IMG / "top_regions.png")
 print("outputs done", N)
