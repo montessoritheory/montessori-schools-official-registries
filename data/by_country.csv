@@ -1,0 +1,5 @@
+country,country_code,registry,schools,cities,regions,with_coordinates,public,private,other_or_not_stated,with_msf_city_page,share_of_dataset_pct
+France,FR,Annuaire de l'education (Ministere de l'Education nationale),245,179,16,238,11,234,0,182,59.8
+Netherlands,NL,DUO Open Onderwijsdata (Dienst Uitvoering Onderwijs),154,87,11,0,50,0,104,129,37.6
+England,GB-ENG,Get Information About Schools (Department for Education),10,8,4,0,0,9,1,8,2.4
+Wales,GB-WLS,Get Information About Schools (Department for Education),1,1,1,0,0,0,1,1,0.2

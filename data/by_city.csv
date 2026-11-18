@@ -1,0 +1,277 @@
+country,region,city,schools
+Netherlands,Noord-Holland,Amsterdam,28
+Netherlands,Zuid-Holland,'s-Gravenhage,10
+France,Ile-de-France,Paris 15e Arrondissement,7
+France,La Réunion,Saint-Denis,5
+Netherlands,Gelderland,Nijmegen,5
+Netherlands,Zuid-Holland,Rotterdam,5
+France,Pays de la Loire,Angers,4
+France,Ile-de-France,Bailly,4
+France,Ile-de-France,Paris 17e Arrondissement,4
+France,Ile-de-France,Paris 7e Arrondissement,4
+France,La Réunion,Saint-Pierre,4
+Netherlands,Flevoland,Almere,4
+Netherlands,Noord-Holland,Bussum,4
+France,Nouvelle-Aquitaine,Andernos-les-Bains,3
+France,Hauts-de-France,Coisy,3
+France,Ile-de-France,Paris 16e Arrondissement,3
+France,Ile-de-France,Paris 19e Arrondissement,3
+France,Ile-de-France,Paris 2e Arrondissement,3
+Netherlands,Overijssel,Deventer,3
+Netherlands,Noord-Holland,Huizen,3
+Netherlands,Limburg,Maastricht,3
+Netherlands,Utrecht,Utrecht,3
+England,London,London,2
+France,Bourgogne-Franche-Comté,Auxerre,2
+France,Nouvelle-Aquitaine,Bergerac,2
+France,Provence-Alpes-Côte d'Azur,Biot,2
+France,Nouvelle-Aquitaine,Bordeaux,2
+France,Ile-de-France,Brie-Comte-Robert,2
+France,Hauts-de-France,Béthune,2
+France,Hauts-de-France,Chantilly,2
+France,Ile-de-France,Clichy,2
+France,Occitanie,Cornebarrieu,2
+France,Provence-Alpes-Côte d'Azur,Draguignan,2
+France,Occitanie,Gaillac,2
+France,Occitanie,Lavérune,2
+France,Ile-de-France,Louveciennes,2
+France,Auvergne-Rhône-Alpes,Lyon 4e Arrondissement,2
+France,Occitanie,Massac-Séran,2
+France,TOM et Collectivités territoriales,Moorea,2
+France,Occitanie,Moulézan,2
+France,Ile-de-France,Palaiseau,2
+France,Ile-de-France,Pantin,2
+France,Ile-de-France,Paris 13e Arrondissement,2
+France,Ile-de-France,Paris 14e Arrondissement,2
+France,Ile-de-France,Paris 20e Arrondissement,2
+France,Ile-de-France,Paris 5e Arrondissement,2
+France,Centre-Val de Loire,Renay,2
+France,Ile-de-France,Rueil-Malmaison,2
+France,Bretagne,Saint-Grégoire,2
+France,Martinique,Saint-Joseph,2
+France,Nouvelle-Aquitaine,Sainte-Bazeille,2
+France,Martinique,Schoelcher,2
+France,Auvergne-Rhône-Alpes,Thonon-les-Bains,2
+Netherlands,Gelderland,Apeldoorn,2
+Netherlands,Gelderland,Arnhem,2
+Netherlands,Zuid-Holland,Delft,2
+Netherlands,Overijssel,Enschede,2
+Netherlands,Noord-Holland,Haarlem,2
+Netherlands,Noord-Holland,Hilversum,2
+Netherlands,Noord-Holland,Hoofddorp,2
+Netherlands,Noord-Brabant,Tilburg,2
+Netherlands,Utrecht,Zeist,2
+England,West Midlands,Henley-in-Arden,1
+England,South East,Hove,1
+England,South East,Maidstone,1
+England,South East,Oxford,1
+England,Yorkshire and the Humber,Skipton,1
+England,South East,Surrey,1
+England,South East,Tadley,1
+France,Occitanie,Albi,1
+France,Nouvelle-Aquitaine,Ambès,1
+France,Ile-de-France,Andrésy,1
+France,Provence-Alpes-Côte d'Azur,Antibes,1
+France,Ile-de-France,Asnières-sur-Seine,1
+France,Ile-de-France,Aubervilliers,1
+France,Provence-Alpes-Côte d'Azur,Avignon,1
+France,Ile-de-France,Avon,1
+France,Auvergne-Rhône-Alpes,Berrias-et-Casteljau,1
+France,Normandie,Bihorel,1
+France,Nouvelle-Aquitaine,Blanquefort,1
+France,TOM et Collectivités territoriales,Bora-bora,1
+France,Occitanie,Bouillargues,1
+France,Ile-de-France,Boulogne-Billancourt,1
+France,Ile-de-France,Brunoy,1
+France,Ile-de-France,Buchelay,1
+France,Provence-Alpes-Côte d'Azur,Cabriès,1
+France,Normandie,Caen,1
+France,Nouvelle-Aquitaine,Camblanes-et-Meynac,1
+France,Occitanie,Cazilhac,1
+France,Auvergne-Rhône-Alpes,Champagne-en-Valromey,1
+France,Ile-de-France,Chaville,1
+France,Auvergne-Rhône-Alpes,Chevry,1
+France,Ile-de-France,Choisy-le-Roi,1
+France,Grand Est,Châlons-en-Champagne,1
+France,Ile-de-France,Châtenay-Malabry,1
+France,Ile-de-France,Colombes,1
+France,Ile-de-France,Conflans-Sainte-Honorine,1
+France,Ile-de-France,Courbevoie,1
+France,Auvergne-Rhône-Alpes,Cranves-Sales,1
+France,Bourgogne-Franche-Comté,Dijon,1
+France,Auvergne-Rhône-Alpes,Divonne-les-Bains,1
+France,Hauts-de-France,Duisans,1
+France,Grand Est,Epinal,1
+France,Bourgogne-Franche-Comté,Escolives-Sainte-Camille,1
+France,Auvergne-Rhône-Alpes,Eteaux,1
+France,TOM et Collectivités territoriales,Faaa,1
+France,Nouvelle-Aquitaine,Fargues-Saint-Hilaire,1
+France,Auvergne-Rhône-Alpes,Gaillard,1
+France,Ile-de-France,Gargenville,1
+France,Nouvelle-Aquitaine,Gauriaguet,1
+France,Occitanie,Giroussens,1
+France,Auvergne-Rhône-Alpes,Grand-Aigueblanche,1
+France,Occitanie,Grenade,1
+France,Auvergne-Rhône-Alpes,Grenoble,1
+France,Grand Est,Haguenau,1
+France,Hauts-de-France,Halluin,1
+France,Ile-de-France,Issy-les-Moulineaux,1
+France,Grand Est,Kingersheim,1
+France,La Réunion,La Possession,1
+France,Pays de la Loire,La Roche-sur-Yon,1
+France,Nouvelle-Aquitaine,La Rochelle,1
+France,Guadeloupe,Le Gosier,1
+France,Ile-de-France,Le Kremlin-Bicêtre,1
+France,Martinique,Le Lamentin,1
+France,Ile-de-France,Le Plessis-Robinson,1
+France,Ile-de-France,Le Pré-Saint-Gervais,1
+France,Nouvelle-Aquitaine,Le Taillan-Médoc,1
+France,La Réunion,Les Avirons,1
+France,Provence-Alpes-Côte d'Azur,Les Pennes-Mirabeau,1
+France,Hauts-de-France,Lille,1
+France,Ile-de-France,Limay,1
+France,Nouvelle-Aquitaine,Lougratte,1
+France,Auvergne-Rhône-Alpes,Lyon 2e Arrondissement,1
+France,Auvergne-Rhône-Alpes,Lyon 3e Arrondissement,1
+France,Auvergne-Rhône-Alpes,Lyon 5e Arrondissement,1
+France,Auvergne-Rhône-Alpes,Lyon 6e Arrondissement,1
+France,Auvergne-Rhône-Alpes,Lyon 8e Arrondissement,1
+France,Ile-de-France,Lévis-Saint-Nom,1
+France,Auvergne-Rhône-Alpes,Mably,1
+France,Ile-de-France,Maisons-Laffitte,1
+France,Ile-de-France,Mantes-la-Ville,1
+France,Ile-de-France,Marly-le-Roi,1
+France,Provence-Alpes-Côte d'Azur,Marseille 12e Arrondissement,1
+France,Provence-Alpes-Côte d'Azur,Marseille 4e Arrondissement,1
+France,Provence-Alpes-Côte d'Azur,Marseille 6e Arrondissement,1
+France,Provence-Alpes-Côte d'Azur,Marseille 7e Arrondissement,1
+France,Ile-de-France,Maurepas,1
+France,Bourgogne-Franche-Comté,Mesnay,1
+France,Nouvelle-Aquitaine,Migné-Auxances,1
+France,Auvergne-Rhône-Alpes,Montagnat,1
+France,Occitanie,Montpellier,1
+France,Ile-de-France,Montreuil,1
+France,Bourgogne-Franche-Comté,Mâcon,1
+France,Auvergne-Rhône-Alpes,Méry,1
+France,Grand Est,Nancy,1
+France,Occitanie,Narbonne,1
+France,Ile-de-France,Neuilly-sur-Seine,1
+France,Auvergne-Rhône-Alpes,Neuville-sur-Saône,1
+France,Provence-Alpes-Côte d'Azur,Nice,1
+France,Ile-de-France,Nogent-sur-Marne,1
+France,TOM et Collectivités territoriales,Nouméa,1
+France,Ile-de-France,Orgeval,1
+France,Centre-Val de Loire,Orléans,1
+France,Ile-de-France,Paris 11e Arrondissement,1
+France,Ile-de-France,Paris 9e Arrondissement,1
+France,Nouvelle-Aquitaine,Pau,1
+France,Ile-de-France,Pontoise,1
+France,Ile-de-France,Presles,1
+France,Occitanie,Pujaut,1
+France,TOM et Collectivités territoriales,Punaauia,1
+France,Hauts-de-France,Pérenchies,1
+France,Grand Est,Reims,1
+France,Bretagne,Rennes,1
+France,Auvergne-Rhône-Alpes,Reventin-Vaugris,1
+France,Martinique,Rivière-Salée,1
+France,Auvergne-Rhône-Alpes,Roanne,1
+France,Auvergne-Rhône-Alpes,Romans-sur-Isère,1
+France,Ile-de-France,Saint-Cloud,1
+France,Ile-de-France,Saint-Fargeau-Ponthierry,1
+France,Occitanie,Saint-Hippolyte-du-Fort,1
+France,Auvergne-Rhône-Alpes,Saint-Jean-de-Gonville,1
+France,La Réunion,Saint-Joseph,1
+France,Grand Est,Saint-Julien-les-Villas,1
+France,Auvergne-Rhône-Alpes,Saint-Just-Saint-Rambert,1
+France,Normandie,Saint-Marcel,1
+France,Hauts-de-France,Saint-Martin-lez-Tatinghem,1
+France,Ile-de-France,Saint-Nom-la-Bretèche,1
+France,La Réunion,Saint-Paul,1
+France,Ile-de-France,Saint-Pierre-du-Perray,1
+France,Normandie,Saint-Pierre-lès-Elbeuf,1
+France,Hauts-de-France,Saint-Quentin,1
+France,La Réunion,Sainte-Marie,1
+France,Provence-Alpes-Côte d'Azur,Salon-de-Provence,1
+France,Nouvelle-Aquitaine,Soorts-Hossegor,1
+France,Grand Est,Spechbach,1
+France,Ile-de-France,Suresnes,1
+France,Hauts-de-France,Thiant,1
+France,Grand Est,Thionville,1
+France,Provence-Alpes-Côte d'Azur,Toulon,1
+France,Ile-de-France,Trappes,1
+France,Occitanie,Uzès,1
+France,Auvergne-Rhône-Alpes,Valence,1
+France,Ile-de-France,Vaux-le-Pénil,1
+France,Ile-de-France,Versailles,1
+France,Ile-de-France,Viarmes,1
+France,Auvergne-Rhône-Alpes,Vichy,1
+France,Auvergne-Rhône-Alpes,Villeurbanne,1
+Netherlands,Noord-Brabant,'s-Hertogenbosch,1
+Netherlands,Noord-Holland,Aerdenhout,1
+Netherlands,Noord-Holland,Alkmaar,1
+Netherlands,Overijssel,Almelo,1
+Netherlands,Zuid-Holland,Alphen Aan Den Rijn,1
+Netherlands,Utrecht,Amersfoort,1
+Netherlands,Noord-Holland,Amstelveen,1
+Netherlands,Noord-Brabant,Bergen Op Zoom,1
+Netherlands,Gelderland,Beuningen Gld,1
+Netherlands,Noord-Holland,Beverwijk,1
+Netherlands,Utrecht,Bilthoven,1
+Netherlands,Noord-Brabant,Breda,1
+Netherlands,Zuid-Holland,Capelle Aan Den Ijssel,1
+Netherlands,Noord-Holland,Castricum,1
+Netherlands,Gelderland,Culemborg,1
+Netherlands,Utrecht,De Meern,1
+Netherlands,Gelderland,Doetinchem,1
+Netherlands,Gelderland,Duiven,1
+Netherlands,Gelderland,Ede,1
+Netherlands,Noord-Brabant,Eindhoven,1
+Netherlands,Drenthe,Emmen,1
+Netherlands,Noord-Holland,Enkhuizen,1
+Netherlands,Zeeland,Goes,1
+Netherlands,Gelderland,Groesbeek,1
+Netherlands,Overijssel,Haaksbergen,1
+Netherlands,Gelderland,Harderwijk,1
+Netherlands,Noord-Brabant,Helmond,1
+Netherlands,Overijssel,Hengelo Ov,1
+Netherlands,Drenthe,Hoogeveen,1
+Netherlands,Utrecht,Hoogland,1
+Netherlands,Noord-Holland,Hoorn Nh,1
+Netherlands,Utrecht,Houten,1
+Netherlands,Noord-Holland,Landsmeer,1
+Netherlands,Noord-Holland,Laren Nh,1
+Netherlands,Zuid-Holland,Leiden,1
+Netherlands,Utrecht,Leusden,1
+Netherlands,Utrecht,Loenersloot,1
+Netherlands,Zuid-Holland,Maassluis,1
+Netherlands,Zuid-Holland,Monster,1
+Netherlands,Noord-Holland,Nieuw-Vennep,1
+Netherlands,Utrecht,Nieuwegein,1
+Netherlands,Zuid-Holland,Nieuwerkerk Ad Ijssel,1
+Netherlands,Zuid-Holland,Noordwijk Zh,1
+Netherlands,Gelderland,Nunspeet,1
+Netherlands,Zuid-Holland,Oegstgeest,1
+Netherlands,Noord-Brabant,Oosterhout Nb,1
+Netherlands,Noord-Brabant,Oss,1
+Netherlands,Groningen,Pieterburen,1
+Netherlands,Zuid-Holland,Pijnacker,1
+Netherlands,Noord-Holland,Purmerend,1
+Netherlands,Utrecht,Rhenen,1
+Netherlands,Zuid-Holland,Rijswijk Zh,1
+Netherlands,Limburg,Roermond,1
+Netherlands,Zuid-Holland,Schiedam,1
+Netherlands,Utrecht,Soest,1
+Netherlands,Zeeland,Tholen,1
+Netherlands,Gelderland,Tiel,1
+Netherlands,Gelderland,Vaassen,1
+Netherlands,Utrecht,Veenendaal,1
+Netherlands,Limburg,Venlo,1
+Netherlands,Limburg,Venray,1
+Netherlands,Gelderland,Wageningen,1
+Netherlands,Zuid-Holland,Wassenaar,1
+Netherlands,Limburg,Weert,1
+Netherlands,Zuid-Holland,Zoetermeer,1
+Netherlands,Gelderland,Zutphen,1
+Netherlands,Noord-Holland,Zwaag,1
+Netherlands,Overijssel,Zwolle,1
+Wales,Wales,Cardiff,1

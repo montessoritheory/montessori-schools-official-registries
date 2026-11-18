@@ -1,0 +1,33 @@
+country,region,schools,cities
+England,South East,6,5
+England,London,2,1
+England,West Midlands,1,1
+England,Yorkshire and the Humber,1,1
+France,Ile-de-France,89,58
+France,Auvergne-Rhône-Alpes,30,28
+France,Nouvelle-Aquitaine,20,15
+France,Occitanie,20,15
+France,Provence-Alpes-Côte d'Azur,15,13
+France,Hauts-de-France,14,10
+France,La Réunion,14,7
+France,Grand Est,9,9
+France,Bourgogne-Franche-Comté,6,5
+France,Martinique,6,4
+France,TOM et Collectivités territoriales,6,5
+France,Pays de la Loire,5,2
+France,Normandie,4,4
+France,Bretagne,3,2
+France,Centre-Val de Loire,3,2
+France,Guadeloupe,1,1
+Netherlands,Noord-Holland,53,18
+Netherlands,Zuid-Holland,30,16
+Netherlands,Gelderland,21,15
+Netherlands,Utrecht,16,13
+Netherlands,Noord-Brabant,9,8
+Netherlands,Overijssel,9,6
+Netherlands,Limburg,7,5
+Netherlands,Flevoland,4,1
+Netherlands,Drenthe,2,2
+Netherlands,Zeeland,2,2
+Netherlands,Groningen,1,1
+Wales,Wales,1,1
