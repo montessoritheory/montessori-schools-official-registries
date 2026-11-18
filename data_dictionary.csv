@@ -1,0 +1,49 @@
+file,column,type,description,example
+montessori_schools_official_registries.csv,country,str,"Country of the school (England and Wales are separate, as GIAS gives them)",France
+montessori_schools_official_registries.csv,country_code,str,"FR, NL, GB-ENG or GB-WLS",FR
+montessori_schools_official_registries.csv,registry,str,Name of the official registry the record comes from,Get Information About Schools (Department for Education)
+montessori_schools_official_registries.csv,official_id,str,"Official identifier in the registry (UAI in France, URN in England and Wales, vestigingscode in the Netherlands)",0333286T
+montessori_schools_official_registries.csv,name,str,School name exactly as the registry publishes it (whitespace tidied),Maria Montessori School
+montessori_schools_official_registries.csv,type_phase,str,"Type of establishment. France: Ecole, College or Lycee as published. England and Wales: GIAS TypeOfEstablishment. Netherlands: Primary (basisonderwijs) or Secondary (voortgezet onderwijs), from the file the record is in",Other independent school
+montessori_schools_official_registries.csv,registry_category,str,"Second registry category as published. France: nature of the establishment. England and Wales: GIAS establishment type group. Netherlands: denomination (denominatie)",Independent schools
+montessori_schools_official_registries.csv,public_or_private,str,"France: the registry's public or private status. England: Private (independent) when GIAS groups the school under independent schools, else Not stated. Netherlands: Public when the denomination is Openbaar, otherwise Publicly funded, special or denominational",Private
+montessori_schools_official_registries.csv,status,str,Registry status. All records in this release are Open (closed schools are left out),Open
+montessori_schools_official_registries.csv,address,str,"Street address lines as published, without postcode and city",26 Lyndhurst Gardens
+montessori_schools_official_registries.csv,postcode,str,Postcode as published,NW3 5NW
+montessori_schools_official_registries.csv,city,str,"City or town as published. French Paris arrondissements are kept as published. Dutch place names are in normal case with DUO's ' GEM ...' suffix removed. One English record has no town in GIAS",London
+montessori_schools_official_registries.csv,region,str,"France: region. England: Government Office Region. Wales: Wales. Netherlands: province",Ile-de-France
+montessori_schools_official_registries.csv,latitude,float,"WGS84 latitude, only when the registry publishes it (France). Empty for England, Wales and the Netherlands",44.84223961918895
+montessori_schools_official_registries.csv,longitude,float,"WGS84 longitude, only when the registry publishes it (France)",-0.6034031092331724
+montessori_schools_official_registries.csv,age_range_or_phase,str,"France: Maternelle and/or Elementaire when the registry flags them (empty for colleges and lycees). England and Wales: statutory age range, for example 3-16. Empty for the Netherlands",3-16
+montessori_schools_official_registries.csv,source_url,str,"Link to the registry record (GIAS), a search of the registry dataset by identifier (France) or the DUO file the record was read from (Netherlands)",https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/131978
+montessori_schools_official_registries.csv,retrieved_at,date,Date the registry files were downloaded,2026-11-17
+montessori_schools_official_registries.csv,match_reason,str,Why the record is in the dataset. Always: name contains Montessori,name contains Montessori
+montessori_schools_official_registries.csv,msf_city_url,str,"Optional link to the matching city page on Montessori School Finder, empty when no reliable match",https://www.montessorischoolfinder.com/locations/england/london/london/
+by_country.csv,country,str,Country,France
+by_country.csv,country_code,str,Country code,FR
+by_country.csv,registry,str,Registry name,Annuaire de l'education (Ministere de l'Education nationale)
+by_country.csv,schools,integer,Number of open schools in the dataset,245
+by_country.csv,cities,integer,Distinct city values (empty values not counted),179
+by_country.csv,regions,integer,Distinct regions or provinces,16
+by_country.csv,with_coordinates,integer,Schools with registry coordinates,238
+by_country.csv,public,integer,Schools with public_or_private = Public,11
+by_country.csv,private,integer,Schools with public_or_private starting with Private,234
+by_country.csv,other_or_not_stated,integer,"All other schools (Not stated, or Dutch publicly funded special or denominational)",0
+by_country.csv,with_msf_city_page,integer,Schools with a Montessori School Finder city link,182
+by_country.csv,share_of_dataset_pct,float,Share of all schools in the dataset,59.8
+by_region.csv,country,str,Country,France
+by_region.csv,region,str,Region or province as published,Ile-de-France
+by_region.csv,schools,integer,Number of schools,89
+by_region.csv,cities,integer,Distinct city values,58
+by_type.csv,country,str,Country,Netherlands
+by_type.csv,type_phase,str,Type or phase,Primary (basisonderwijs)
+by_type.csv,public_or_private,str,Public or private value,Public
+by_type.csv,schools,integer,Number of schools,50
+by_city.csv,country,str,Country,Netherlands
+by_city.csv,region,str,Region or province,Noord-Holland
+by_city.csv,city,str,City as published,Amsterdam
+by_city.csv,schools,integer,Number of schools in that city,28
+montessori_schools_with_coordinates.geojson,properties,object,"country, official_id, name, city, region, public_or_private. Geometry is a WGS84 point. Only the 238 French records that have registry coordinates",
+registry_totals.csv,country,str,Country or group,Netherlands
+registry_totals.csv,registry_file,str,Registry file the count comes from,DUO Primary (basisonderwijs) all school locations
+registry_totals.csv,open_establishments,integer,All open establishments in that registry file (the denominator for shares),6088

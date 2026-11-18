@@ -1,0 +1,41 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Montessori Schools in Official School Registries
+Copyright (c) 2026 Montessori Theory (montessori-theory.com) and Montessori School Finder (montessorischoolfinder.com)
+
+You are free to share and adapt this dataset for any purpose, even commercially,
+as long as you give appropriate credit to Montessori Theory with a link to
+https://www.montessori-theory.com/ and indicate if changes were made.
+Please also link Montessori School Finder, https://www.montessorischoolfinder.com/, the companion directory.
+
+Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+The code in scripts/ is released under the MIT License.
+
+Source licences and required attribution statements
+---------------------------------------------------
+The records come from three official registries. Each keeps its own licence, and
+the statements below must travel with any reuse of the data.
+
+France. Source: Ministere de l'Education nationale, Direction du numerique pour
+l'education, "Annuaire de l'education" (dataset fr-en-annuaire-education),
+data.education.gouv.fr, published under the Licence Ouverte / Open Licence
+version 2.0 (Etalab), https://www.etalab.gouv.fr/licence-ouverte-open-licence/
+Data downloaded on 2026-11-17 (registry last update 2026-11-17).
+
+England and Wales. Source: Department for Education, "Get Information About
+Schools" (GIAS) establishment data, https://get-information-schools.service.gov.uk/
+Contains public sector information licensed under the Open Government Licence v3.0,
+https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+Data downloaded on 2026-11-17.
+
+The Netherlands. Source: DUO (Dienst Uitvoering Onderwijs), Open Onderwijsdata,
+school locations of primary and secondary education,
+https://duo.nl/open_onderwijsdata/ , released under CC0 1.0 Universal.
+Data downloaded on 2026-11-17. Credit is given as a courtesy.
+
+This dataset is a selection and re-formatting of those records (schools whose
+official name contains "Montessori"), with the summaries and links added by
+Montessori Theory. It is not an official product of any of the three bodies and
+they do not endorse it. Contact details of schools (telephone, email, head
+teacher names) are not included.

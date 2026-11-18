@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below, and credit the three official registries (see LICENSE)."
+type: dataset
+title: "Montessori Schools in Official School Registries"
+version: "1.0"
+date-released: 2026-11-18
+license: CC-BY-4.0
+authors:
+  - family-names: Carter
+    given-names: Sophia
+  - name: Montessori Theory
+    website: "https://www.montessori-theory.com/"
+  - name: Montessori School Finder
+    website: "https://www.montessorischoolfinder.com/"
+repository-code: "https://github.com/montessoritheory/montessori-schools-official-registries"
+url: "https://www.montessorischoolfinder.com/"
+abstract: "Every open school whose official name contains Montessori in three government school registries, the Annuaire de l'education (France), Get Information About Schools (England and Wales) and DUO Open Onderwijsdata (the Netherlands). 410 records with identifiers, addresses, status and, for France, coordinates, plus summaries by country, region, type and city."
+keywords: [Montessori, schools, school registry, open data, France, England, Netherlands, education]
+references:
+  - type: data
+    title: "Annuaire de l'education"
+    authors:
+      - name: "Ministere de l'Education nationale"
+    url: "https://data.education.gouv.fr/explore/dataset/fr-en-annuaire-education/"
+    license: etalab-2.0
+  - type: data
+    title: "Get Information About Schools (establishment data)"
+    authors:
+      - name: "Department for Education"
+    url: "https://get-information-schools.service.gov.uk/"
+  - type: data
+    title: "Open Onderwijsdata, school locations"
+    authors:
+      - name: "DUO (Dienst Uitvoering Onderwijs)"
+    url: "https://duo.nl/open_onderwijsdata/"
