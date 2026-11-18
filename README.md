@@ -4,7 +4,7 @@
 
 ![Montessori Schools in Official School Registries](images/cover.png)
 
-**An open dataset from [Montessori School Finder](https://www.montessorischoolfinder.com/), the worldwide Montessori school directory, built with [Montessori Theory](https://www.montessori-theory.com/).**
+**An open dataset from [Montessori School Finder](https://www.montessorischoolfinder.com/), the worldwide Montessori school directory.**
 
 English first, version française plus bas, resumen en español al final.
 
@@ -32,11 +32,13 @@ Use it to count and map Montessori schools, to study how the word is used in sch
 | Paris, all arrondissements | 34 schools |
 | Records with a Montessori School Finder city page | 320 of 410 |
 
-![Open schools with Montessori in the official name, by country](images/schools_by_country.png)
+![Montessori schools in official registries in six numbers](images/key_numbers.png)
+
+![Map of the French records with registry coordinates](images/france_dot_map.png)
+
+![Schools by country, and public or private status by country](images/registry_shares.png)
 
 ![The 12 regions with the most Montessori-named schools](images/top_regions.png)
-
-![Public, private and other status](images/public_private.png)
 
 ### Files
 
@@ -118,9 +120,13 @@ A school is kept when its **name contains "Montessori"**, ignoring case and acce
 - **Place names are as published.** French Paris records keep the arrondissement. Dutch place names were put into normal case and DUO's municipality suffix was removed. One English record has no town in GIAS. A few Dutch place names keep the province tag DUO uses to tell towns apart, for example "Hoorn Nh".
 - **Snapshot.** Registries change every week. This is the state on 17 November 2026.
 
+### Image Credits
+
+Cover photo by Anil Sharma on [Pexels](https://www.pexels.com/photo/40282968/), Pexels License. Country outlines in the France map from [Natural Earth](https://www.naturalearthdata.com/), public domain. Charts by Montessori School Finder.
+
 ### License And Citation
 
-**[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** for the compilation. Use it, share it and adapt it, commercially or not, and credit **Montessori Theory** with a link to **[montessori-theory.com](https://www.montessori-theory.com/)**. A link to **[Montessori School Finder](https://www.montessorischoolfinder.com/)** is appreciated.
+**[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** for the compilation. Use it, share it and adapt it, commercially or not, and credit **Montessori School Finder** with a link to **[montessorischoolfinder.com](https://www.montessorischoolfinder.com/)**.
 
 The underlying records keep the licence of their registry, and you must keep these statements with any reuse.
 
@@ -131,9 +137,9 @@ The underlying records keep the licence of their registry, and you must keep the
 This dataset is not an official product of these bodies and they do not endorse it. School contact details, such as telephone numbers, emails and head teachers, are not included.
 
 ```bibtex
-@misc{montessoritheory_montessori_schools_official_registries_2026,
+@misc{montessorischoolfinder_montessori_schools_official_registries_2026,
   title  = {Montessori Schools in Official School Registries},
-  author = {Carter, Sophia and {Montessori Theory} and {Montessori School Finder}},
+  author = {{Montessori School Finder}},
   year   = {2026},
   url    = {https://github.com/montessoritheory/montessori-schools-official-registries},
   note   = {Dataset, version 1.0, built from the Annuaire de l'education, GIAS and DUO Open Onderwijsdata}
@@ -150,7 +156,7 @@ Also on **[Kaggle](https://www.kaggle.com/datasets/mariamontessori/montessori-sc
 
 Ce jeu de données reprend les écoles **ouvertes dont le nom officiel contient "Montessori"** dans les registres publics de **France** (Annuaire de l'éducation, Licence Ouverte 2.0), d'**Angleterre et du pays de Galles** (GIAS, Open Government Licence v3.0) et des **Pays-Bas** (DUO, CC0). Il compte **410 écoles**, dont **245 en France**, 154 aux Pays-Bas, 10 en Angleterre et 1 au pays de Galles. Chaque ligne a l'identifiant officiel (UAI, URN ou code DUO), l'adresse, le statut et, pour la France, les coordonnées, avec des tableaux par pays, région, type et ville.
 
-À savoir. Le nom est le seul critère, car aucun registre ne vérifie la pédagogie. Une école qui applique la méthode sans le mot dans son nom n'apparaît pas. Les écoles fermées sont exclues. Données du 17 novembre 2026. Licence CC BY 4.0 pour la compilation, avec les mentions des licences d'origine (voir plus haut). Pour trouver une école près de chez vous, voir [Montessori School Finder](https://www.montessorischoolfinder.com/).
+À savoir. Le nom est le seul critère, car aucun registre ne vérifie la pédagogie. Une école qui applique la méthode sans le mot dans son nom n'apparaît pas. Les écoles fermées sont exclues. Données du 17 novembre 2026. Licence CC BY 4.0 pour la compilation, en citant Montessori School Finder avec un lien vers montessorischoolfinder.com, et avec les mentions des licences d'origine (voir plus haut). Pour trouver une école près de chez vous, voir [Montessori School Finder](https://www.montessorischoolfinder.com/).
 
 ## Versión En Español
 
@@ -158,4 +164,8 @@ Ce jeu de données reprend les écoles **ouvertes dont le nom officiel contient 
 
 Este conjunto de datos reúne las escuelas **abiertas cuyo nombre oficial contiene "Montessori"** en los registros públicos de **Francia** (Annuaire de l'éducation), **Inglaterra y Gales** (GIAS) y **los Países Bajos** (DUO). Son **410 escuelas**, **245 en Francia**, 154 en los Países Bajos, 10 en Inglaterra y 1 en Gales. Cada fila trae el identificador oficial, la dirección, el estado y, para Francia, las coordenadas, con tablas por país, región, tipo y ciudad.
 
-Hay que tener en cuenta que el nombre es el único criterio, porque ningún registro comprueba la pedagogía. Las escuelas cerradas no se incluyen. Datos del 17 de noviembre de 2026. Licencia CC BY 4.0 para la compilación, con las menciones de las licencias de origen. Para encontrar una escuela cerca de usted, vea [Montessori School Finder](https://www.montessorischoolfinder.com/).
+Hay que tener en cuenta que el nombre es el único criterio, porque ningún registro comprueba la pedagogía. Las escuelas cerradas no se incluyen. Datos del 17 de noviembre de 2026. Licencia CC BY 4.0 para la compilación, con crédito a Montessori School Finder y enlace a montessorischoolfinder.com, y con las menciones de las licencias de origen. Para encontrar una escuela cerca de usted, vea [Montessori School Finder](https://www.montessorischoolfinder.com/).
+
+---
+
+**Part of the [Montessori School Finder open datasets](https://github.com/montessoritheory/montessori-schools-open-data).** Directory at [montessorischoolfinder.com](https://www.montessorischoolfinder.com/).
