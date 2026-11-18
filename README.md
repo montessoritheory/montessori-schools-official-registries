@@ -1,5 +1,7 @@
 # Montessori Schools in Official School Registries
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24328201.svg)](https://doi.org/10.5281/zenodo.24328201)
+
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) [![Kaggle](https://img.shields.io/badge/Kaggle-dataset-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/mariamontessori/montessori-schools-official-registries) [![Hugging Face](https://img.shields.io/badge/Hugging_Face-dataset-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/datasets/montessoritheory/montessori-schools-official-registries)
 
 ![Montessori Schools in Official School Registries](images/cover.png)
@@ -125,6 +127,8 @@ A school is kept when its **name contains "Montessori"**, ignoring case and acce
 Country outlines in the France map from [Natural Earth](https://www.naturalearthdata.com/), public domain. Charts by Montessori School Finder.
 
 ### License And Citation
+
+Archived on Zenodo with DOI [10.5281/zenodo.24328201](https://doi.org/10.5281/zenodo.24328201).
 
 **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** for the compilation. Use it, share it and adapt it, commercially or not, and credit **Montessori School Finder** with a link to **[montessorischoolfinder.com](https://www.montessorischoolfinder.com/)**.
 
