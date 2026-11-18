@@ -122,7 +122,7 @@ A school is kept when its **name contains "Montessori"**, ignoring case and acce
 
 ### Image Credits
 
-Cover photo by Anil Sharma on [Pexels](https://www.pexels.com/photo/40282968/), Pexels License. Country outlines in the France map from [Natural Earth](https://www.naturalearthdata.com/), public domain. Charts by Montessori School Finder.
+Country outlines in the France map from [Natural Earth](https://www.naturalearthdata.com/), public domain. Charts by Montessori School Finder.
 
 ### License And Citation
 
